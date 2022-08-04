@@ -3,6 +3,9 @@
 ## Usage
 
 ## Installation
+```lisp
+(ql:quickload :cl-djula-svg)
+```
 
 ## Author
 
