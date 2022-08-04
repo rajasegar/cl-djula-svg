@@ -41,7 +41,7 @@
 								(list (format nil "{% if width %}{{width}}{% else %}~A{% endif %}" width))))
 				;; add width attribute
 						(setf (xmls:node-attrs svg) (append (xmls:node-attrs svg) 
-										(list '("width" "{% if width %}{{width}}{% else %}32{% endif %}"))))))
+										(list '("width" "{% if width %}{{width}}{% else %}16{% endif %}"))))))
 
 		;; process fill attribute
 		(let ((fill-attr (assoc "fill" (xmls:node-attrs svg) :test #'string=)))
@@ -54,11 +54,10 @@
 								(setf (xmls:node-attrs svg) (append (xmls:node-attrs svg) 
 												(list '("fill" "{% if fill %}{{fill}}{% else %}currentColor{% endif %}"))))))
 
-		;; (print (cdr (assoc "height" (xmls:node-attrs svg) :test #'string=)))
-		(print (xmls:node-attrs svg))
+		;; (print (xmls:node-attrs svg))
 		;; (print (xmls:toxml svg))
 		(xmls:toxml svg)
 	))
 
 
-(copy-svg "./quicklisp/local-projects/cl-djula-svg/static/svgs/" "./quicklisp/local-projects/cl-djula-svg/templates/svgs/")
+;; (copy-svg "./quicklisp/local-projects/cl-djula-svg/static/svgs/" "./quicklisp/local-projects/cl-djula-svg/templates/svgs/")
