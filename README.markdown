@@ -1,4 +1,8 @@
 # cl-djula-svg
+![Build and Deploy](https://github.com/rajasegar/cl-djula-svg/workflows/CI/badge.svg)
+[![Quicklisp](http://quickdocs.org/badge/cl-djula-svg.svg)](http://quickdocs.org/cl-djula-svg/)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
 
 A Common Lisp package that will help process SVG files and copy them to folders
 so that they can be used in [Djula]() templates in a [Caveman]() web application framework.
