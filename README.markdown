@@ -5,7 +5,7 @@
 
 
 A Common Lisp package that will help process SVG files and copy them to folders
-so that they can be used in [Djula]() templates in a [Caveman]() web application framework.
+so that they can be used in [Djula](https://github.com/mmontone/djula) templates in a [Caveman](https://github.com/fukamachi/caveman) web application framework.
 
 ## Features
 - Adds / Updates `height`, `width`, `fill`, `class` attributes in the `svg` root element
