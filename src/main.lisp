@@ -1,6 +1,7 @@
 (defpackage cl-djula-svg
   (:use :cl)
-	(:export :copy-svg))
+	(:export :copy-svg
+					 :process-svg-attrs))
 
 (in-package :cl-djula-svg)
 
@@ -53,6 +54,17 @@
 				;; add fill attribute 
 								(setf (xmls:node-attrs svg) (append (xmls:node-attrs svg) 
 												(list '("fill" "{% if fill %}{{fill}}{% else %}currentColor{% endif %}"))))))
+
+		;; process class attribute
+		(let ((class-attr (assoc "class" (xmls:node-attrs svg) :test #'string=)))
+			(if class-attr
+				(let ((class (car (cdr class-attr))))
+				;;update class value
+				(setf (cdr (assoc "class" (xmls:node-attrs svg) :test #'string=))
+								(list (format nil "{% if class %}{{class}}{% else %}~A{% endif %}" class))))
+				;; add class attribute 
+								(setf (xmls:node-attrs svg) (append (xmls:node-attrs svg) 
+												(list '("class" "{% if class %}{{class}}{% else %}{% endif %}"))))))
 
 		;; (print (xmls:node-attrs svg))
 		;; (print (xmls:toxml svg))
